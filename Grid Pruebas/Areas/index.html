@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Areas</title>
+   <style>
+      body {
+         font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+         display: grid;
+         /*Crea el grid*/
+         /*Crea una columna por cada valor ingresado en este caso 3*/
+         /* grid-template-columns: 25% 50% 25%; */
+         /*Crea una fila por cada valor ingresado en este caso 2 y las demas toman un tamaño automatico*/
+         /* grid-template-rows: 300px 300px; */
+         /*Con este resumimos las dos anteriores primero filas / columnas*/
+         grid-template: 1fr 6fr 1fr /1fr 3fr;
+         /*grid gap nos permite realizar margenes de manera precisa sin joder los elementos*/
+         grid-gap: 10px 10px;
+         /*repeat(cantidad, valor)*/
+         /*minmax(minimo,maximo)*/
+         /*repeat(cantidad, minmax(minimo,maximo)*/
+         /*Toda la pantalla*/
+         height: 100vh;
+         /*Recive como parametro las filas y columnas*/
+         /*En este caso, le estamos diciendo que header ocupara dos columnas una fila*/
+         /*left y contenido una fila y dos columnas*/
+         grid-template-areas: "header header"
+                              "left right" 
+                              "footer footer";
+      }
+
+      .item {
+         border-radius: 10px;
+         background-color: lightblue;
+         border: 1px solid red;
+         padding: 10px;
+         overflow: auto;/* agrega un scroll */
+      }
+
+      /*Estamos designando los espacios que 
+      van a usar como dijimos en el padre*/
+      .header{
+         grid-area: header;
+      }
+      .left{
+         grid-area: left;
+      }
+      .right{
+         grid-area: right;
+      }
+      .footer{
+         grid-area: footer;
+      }
+   </style>
+</head>
+
+<body>
+   <section class="container">
+      <div class="item header">Header</div>
+      <div class="item left">Left</div>
+      <div class="item right">Right</div>
+      <div class="item footer">Footer</div>
+   </section>
+</body>
+
+</html>

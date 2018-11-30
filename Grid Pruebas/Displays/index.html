@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Displays</title>
+   <style>
+      body {
+         font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+         display: grid;
+         /*Crea el grid*/
+         /*Crea una columna por cada valor ingresado en este caso 3*/
+         /* grid-template-columns: 25% 50% 25%; */
+         /*Crea una fila por cada valor ingresado en este caso 2 y las demas toman un tamaño automatico*/
+         /* grid-template-rows: 300px 300px; */
+         /*Con este resumimos las dos anteriores primero filas / columnas*/
+         grid-template: 300px 200px 100px /70% 15% 15%;
+      }
+
+      .item {
+         background-color: lightblue;
+         border: 1px solid red;
+         padding: 10px;
+      }
+      .item .item{
+         background-color: lightgreen !important;
+      }
+      /*Con este metodo podemos seleccionar un elemento*/
+      .item:nth-of-type(4) {
+         background: lightcoral;
+         overflow: auto; /*agrega un scroll*/
+         /* display: subgrid; aun no funciona */
+         display: grid;
+         grid-template: 30% 40% 30% /30% 40% 30%;
+      }
+   </style>
+</head>
+
+<body>
+   <section class="container">
+      <div class="item">contenido#1</div>
+      <div class="item">contenido#2</div>
+      <div class="item">contenido#3</div>
+      <div class="item">
+         <div class="item">subItem #1</div>
+         <div class="item">subItem #2</div>
+         <div class="item">subItem #3</div>
+         <div class="item">subItem #4</div>
+         <div class="item">subItem #5</div>
+      </div>
+      <div class="item">contenido#5</div>
+      <div class="item">contenido#6</div>
+      <div class="item">contenido#7</div>
+      <div class="item">contenido#8</div>
+      <div class="item">contenido#9</div>
+      <div class="item">contenido#10</div>
+      <div class="item">contenido#11</div>
+      <div class="item">contenido#12</div>
+   </section>
+</body>
+
+</html>
