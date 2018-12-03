@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Renombrar Lineas</title>
+   <style>
+      body {
+         font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+         display: grid;
+         /*Crea el grid*/
+         /*Crea una columna por cada valor ingresado en este caso 3*/
+         grid-template-columns: [Inicio] 1fr [Linea2] 1fr [Linea3] 1fr [Linea4] 1fr[Linea5] 1fr [Linea6] 1fr [Linea7] 1fr [Final];
+         /*Crea una fila por cada valor ingresado en este caso 2 y las demas toman un tamaño automatico*/
+         grid-template-rows: [InicioR] 1fr [LineaR2] 1fr [LineaR3] 1fr [LineaR4] 1fr[LineaR5] 1fr [LineaR6] 1fr [LineaR7] 1fr [FinalR];
+         grid-gap: 10px; /*Margen en grid*/
+         height: 100vh;
+      }
+
+      .item {
+         background-color: lightblue;
+         border: 1px solid red;
+         padding: 10px;
+         /* agrega un scroll */
+      }
+
+      .item:nth-of-type(1){
+         background: lightcoral;
+         /*Damos en que linea empieza y 
+         en que linea termina la columna*/
+         /* grid-column-start: 1;
+         grid-column-end: 8;
+         grid-row: 1/ span 4; */
+         grid-column: Inicio / Final;
+         grid-row: InicioR / LineaR5;
+      }
+      .item:nth-of-type(2){
+         background: lightseagreen;
+         /*Damos en que linea empieza y 
+         en que linea termina la columna*/
+         /* grid-column-start: 1;
+         grid-column-end: 4;
+         grid-row: 5/ span 3; */
+         grid-column: Inicio / Linea4;
+         grid-row: LineaR5 / FinalR;
+      }
+      .item:nth-of-type(3){
+         background: lightgreen;
+         /*Damos en que linea empieza y 
+         en que linea termina la columna*/
+         /*grid-column-start: 4;
+         grid-column-end: 6;
+         grid-row: 5/ span 3;*/
+         grid-column: Linea4 / Linea6;
+         grid-row: LineaR5 / FinalR;
+      }
+      .item:nth-of-type(4){
+         background: lightpink;
+         /*Damos en que linea empieza y 
+         en que linea termina la columna*/
+         /* grid-column-start: 6;
+         grid-column-end: 8;
+         grid-row: 5/ span 2; */
+         grid-column: Linea6 / FinalR;
+         grid-row: LineaR5 / LineaR7;
+      }
+      .item:nth-of-type(5){
+         background: lightgray;
+         /*Damos en que linea empieza y 
+         en que linea termina la columna*/
+         /* grid-column-start: 7;
+         grid-column-end: 8;
+         grid-row: 7/ span 1; */
+         grid-column: Linea6 / Linea7;
+         grid-row: LineaR7 / FinalR;;
+      }
+      .item:nth-of-type(6){
+         background: lightgoldenrodyellow;
+         /*Damos en que linea empieza y 
+         en que linea termina la columna*/
+         /* grid-column-start: 6;
+         grid-column-end: 7;
+         grid-row: 7/ span 1; */
+         grid-column: Linea7 / FinalR;
+         grid-row: LineaR7 / FinalR;;
+      }
+   </style>
+</head>
+
+<body>
+   <section class="container">
+      <div class="item">item #1</div>
+      <div class="item">item #2</div>
+      <div class="item">item #3</div>
+      <div class="item">item #4</div>
+      <div class="item">item #6</div>
+      <div class="item">item #7</div>
+   </section>
+</body>
+
+</html>
