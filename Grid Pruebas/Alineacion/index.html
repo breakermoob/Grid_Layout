@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Alineación</title>
+   <style>
+      body {
+         font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+         /*Crea el grid*/
+         display: grid;
+         /*Margen en grid*/
+         grid-gap: 10px;
+         grid-template-columns: repeat(3,1fr);
+         grid-template-rows: repeat(4,1fr);
+         height: 100vh;
+         /* justify-items: start end center stretch; Alineado en filas */
+         justify-items: center;
+         /* align-items: start end center stretch; Alineado en columnas */
+         align-items: center;
+         /*stretch estirla los elementos del tamaño asignado*/
+      }
+
+      .item {
+         background-color: lightblue;
+         border: 1px solid red;
+         padding: 10px;
+      }
+      .item:nth-of-type(5){
+         /*Alineate tu mismo wey*/
+         align-self:center;
+         /*justificate tu mismo wey*/
+         justify-self: stretch;
+      }
+   </style>
+</head>
+
+<body>
+   <section class="container">
+      <div class="item">item #1</div>
+      <div class="item">item #2</div>
+      <div class="item">item #3</div>
+      <div class="item">item #4</div>
+      <div class="item">item #5</div>
+      <div class="item">item #6</div>
+      <div class="item">item #7</div>
+      <div class="item">item #8</div>
+      <div class="item">item #9</div>
+      <div class="item">item #10</div>
+      <div class="item">item #11</div>
+      <div class="item">item #12</div>
+   </section>
+</body>
+
+</html>
