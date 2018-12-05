@@ -1,0 +1,63 @@
+body{
+   margin:0;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.post{
+   cursor: pointer;
+   position: relative;
+   display: block;
+}
+/*Desde este momento no volveras a ser el mismo*/
+/*Lo que veras acontinuación es pura magia negra*/
+/*Esta es la ultima advertencia, si eres valiente continua*/
+
+/*4 lineas de magia negra*/
+.post-list{
+   display: grid;
+   grid-template-columns: repeat(3,minmax(100px,293px));
+   justify-content: center;
+   grid-gap: 28px;
+}
+
+.post-image{
+   margin:0;
+}
+.post-image img{
+   width: 100%;
+   vertical-align: top;
+}
+.post-overlay{
+   background: rgba(0, 0, 0, .4);
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   top: 0;
+   /*Por defecto en display node esta inactivo*/
+   display: none;
+   /*Propiedades para centrar los elementos*/
+   align-items: center;
+   justify-content: center;
+   color: white;
+   text-align: center;
+}
+
+/*Esto es para que se active nuestro post-ovarlay al pasar*/
+.post:hover .post-overlay {
+   display: flex;
+}
+
+.post-likes, .post-comments{
+   width: 80px;
+   margin: 5px;
+   font-weight: bold;
+   text-align: center;
+   display: inline-block;
+}
+/*Ajuste de magia negra para hacer responsive*/
+@media screen and (max-width: 768px){
+   .post-list{
+      grid-gap: 3px;
+   }
+}
