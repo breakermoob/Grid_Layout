@@ -1,0 +1,31 @@
+
+.container{
+   display: grid;
+   /*Una forma facil de hacer responsive nuestras columnas
+   Es cambiar la cantidad del repeat por auto-fill*/
+   grid-template-columns: repeat(auto-fill,200px);
+   grid-gap: 5px;
+   justify-content: center;
+}
+.item{
+   border-radius: 5px;
+   padding: 10px;
+   background: #f2f2f2;
+}
+
+.item img{
+   width: 100%;
+   height: 100%;
+   /* Recubre la imagen, para evitar que se deforme */
+   object-fit: cover;
+}
+
+.level-1{
+   grid-row: span 3;
+}
+.level-2{
+   grid-row: span 2;
+}
+.level-3{
+   grid-row: span 1;
+}
